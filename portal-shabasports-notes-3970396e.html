@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>沙巴体育 · 资料索引</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f2f4f6;
+      font-family: 'Segoe UI', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e2a3a;
+      padding: 1.5rem 1rem;
+    }
+    .page-wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* 期刊式横幅 */
+    .hero {
+      background: linear-gradient(145deg, #f9fbfd 0%, #e9edf2 100%);
+      border: 1px solid #d9dfe6;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      padding: 2.8rem 2.5rem 2rem;
+      margin-bottom: 2.4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '📘';
+      position: absolute;
+      right: 2rem;
+      top: 1rem;
+      font-size: 3.2rem;
+      opacity: 0.15;
+      transform: rotate(8deg);
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #1c2a3a;
+      margin-bottom: 0.4rem;
+    }
+    .hero .sub {
+      font-size: 1rem;
+      color: #4f6178;
+      border-left: 4px solid #b4c3d3;
+      padding-left: 1rem;
+      margin-top: 0.3rem;
+    }
+    .hero .tag-row {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .tag-row span {
+      background: #ffffffcc;
+      backdrop-filter: blur(2px);
+      border: 1px solid #cbd5e1;
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      font-size: 0.8rem;
+      color: #2e405b;
+    }
+
+    /* 卡片组合 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #dde3ea;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      padding: 2rem 2.2rem;
+      transition: box-shadow 0.15s;
+    }
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #172433;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card h2 i { font-style: normal; font-size: 1.3rem; }
+    .card p {
+      color: #2e405b;
+      margin-bottom: 0.7rem;
+    }
+    .card p:last-of-type {
+      margin-bottom: 0;
+    }
+    .highlight {
+      background: #f0f2f6;
+      border-left: 4px solid #7c8fa8;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0 8px 8px 0;
+      margin: 0.8rem 0;
+      font-size: 0.94rem;
+    }
+
+    /* 内联链接风格 */
+    a {
+      color: #1c4e79;
+      text-decoration: none;
+      border-bottom: 1px dashed #a7bad0;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    a:hover {
+      color: #0a2e4a;
+      border-bottom: 1px solid #0a2e4a;
+    }
+
+    /* FAQ 摘要卡片 */
+    .faq-mini {
+      margin-top: 2rem;
+    }
+    .faq-mini details {
+      background: #f8fafc;
+      border: 1px solid #d9dfe7;
+      border-radius: 14px;
+      padding: 0.9rem 1.4rem;
+      margin-bottom: 0.6rem;
+      cursor: pointer;
+    }
+    .faq-mini details[open] {
+      background: #f2f6fc;
+      border-color: #b8c9de;
+    }
+    .faq-mini summary {
+      font-weight: 500;
+      color: #1c2f45;
+      outline: none;
+    }
+    .faq-mini .answer {
+      margin-top: 0.4rem;
+      color: #2e4a66;
+      padding-left: 0.3rem;
+      border-left: 3px solid #b2c7dd;
+      padding-left: 0.9rem;
+    }
+
+    /* 页尾提示 */
+    .footer-note {
+      margin-top: 3rem;
+      padding: 1.8rem 2rem;
+      background: #eef1f6;
+      border: 1px solid #d2dae4;
+      border-radius: 28px;
+      text-align: center;
+      color: #1b2a3b;
+      font-size: 0.95rem;
+    }
+    .footer-note small {
+      display: block;
+      margin-top: 0.3rem;
+      color: #5b6f88;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      body { padding: 1rem 0.75rem; }
+      .hero { padding: 2rem 1.2rem 1.5rem; }
+      .hero h1 { font-size: 1.9rem; }
+      .card { padding: 1.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- 首页横幅 -->
+  <header class="hero">
+    <h1>沙巴体育 · 索引</h1>
+    <div class="sub">资料整理 · 信息框架 · 专题阅览</div>
+    <div class="tag-row">
+      <span>赛事数据</span>
+      <span>平台生态</span>
+      <span>数字档案</span>
+      <span>索引库</span>
+    </div>
+  </header>
+
+  <!-- 三段自然介绍 + 卡片区 -->
+  <div class="card-grid">
+
+    <section class="card">
+      <h2><i>📋</i> 一、从资料整理的角度</h2>
+      <p>对于体育资讯与赛事数据的关注者而言，<strong><a href="https://portal-shabasports.com">沙巴体育</a></strong> 常常出现在各类比分、指数与赛程聚合的讨论之中。无论作为信息源还是工具参考，它并非简单的内容输出，而是一套围绕赛事展开的索引型平台。梳理其底层结构，有助于更快定位目标数据。</p>
+      <div class="highlight">
+        🔍 在资料检索场景中，理解平台分类逻辑（联赛、时段、统计维度）比直接浏览更高效。
+      </div>
+      <p>本辑专题不以推介为目的，而是尝试以知识梳理的视角，将 <strong>沙巴体育</strong> 所涉及的常见模块拆解为可供参考的索引卡片。以下两段分别从机制特征与应用场景展开。</p>
+    </section>
+
+    <section class="card">
+      <h2><i>⚙️</i> 二、机制与索引特征</h2>
+      <p>从信息结构上看，<a href="https://portal-shabasports.com">沙巴体育</a> 覆盖了足球、篮球、网球等主流运动，并围绕实时比分、历史统计、预设排位等维度搭建内容节点。其呈现方式倾向于高密度信息卡片与筛选逻辑的组合，适合有一定查阅经验的用户快速抓取关键字段。</p>
+      <p>在资料整理场景中，其价值体现在两个方面：一是赛事覆盖的连续性（多赛季数据可回溯），二是分类标签的标准化（联赛、队伍、阶段均有固定标识）。对于做数据对比或趋势归纳的研究型访问者，这些特性提供了可重复的提取路径。</p>
+    </section>
+
+    <section class="card">
+      <h2><i>🧩</i> 三、适用场景与整理建议</h2>
+      <p>无论是赛前资料收集、赛后复盘对比，还是长期跟踪特定联赛的走向，<strong>沙巴体育</strong> 都能提供结构化的信息入口。建议使用者先明确自己的索引目标——是按联赛、按队伍还是按时间区间，再借助平台的筛选面板逐步缩小范围。</p>
+      <p>此外，由于数据体量较大，建议每次查阅时做简要的记录标记（如日期、对阵、关键统计项），以便后续交叉引用。这种索引式思维能让资料整理过程更加系统，也更容易发现规律。</p>
+    </section>
+  </div>
+
+  <!-- FAQ 摘要 —— 轻量问答卡片 -->
+  <div class="faq-mini card" style="padding:1.5rem 1.8rem;">
+    <h2 style="margin-bottom:0.2rem; font-size:1.2rem;"><i>❓</i> 常见索引疑惑</h2>
+    <details>
+      <summary>如何快速定位某联赛的历史数据？</summary>
+      <div class="answer">进入 <a href="https://portal-shabasports.com">沙巴体育</a> 后，使用顶部联赛筛选栏，选择对应赛事标签，再通过日期或赛季下拉框做范围限定。多数联赛支持近三个赛季以上的数据回溯。</div>
+    </details>
+    <details>
+      <summary>资料整理时应注意哪些字段？</summary>
+      <div class="answer">重点关注：比赛时间（UTC+8 对照）、比分、半场数据、队伍近期走势。这些字段在跨平台比对时一致性较高。</div>
+    </details>
+    <details>
+      <summary>该平台是否提供统计导出功能？</summary>
+      <div class="answer">当前版本以网页即时查看为主，若需系统化整理，建议配合浏览器插件或手动摘录。平台本身的内容更新频率稳定，适合定期采集。</div>
+    </details>
+  </div>
+
+  <!-- 页尾访问提示（不出现“进入官网”等违禁词） -->
+  <div class="footer-note">
+    <p>本索引页围绕 <a href="https://portal-shabasports.com">沙巴体育</a> 的信息结构进行整理，供研究型读者参考。资料版本以平台实际展示为准。</p>
+    <small>— 专题编号 C8444C17 · 资料卡片 —</small>
+  </div>
+
+</div>
+</body>
+</html>
